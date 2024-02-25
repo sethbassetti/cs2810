@@ -41,6 +41,3 @@ Create a MIPS assembly program that:
 - After exiting the loop, set up the final step to terminate the program.
 - Load the syscall number for program termination into `$v0`.
 - Perform the syscall to exit the program.
-
-### Summary
-This guide provides a high-level overview of constructing a MIPS assembly program that iterates over an array and prints each element followed by a space. It covers initializing program data, looping through array elements, printing values, and exiting the program. Encourage your students to translate these steps into actual MIPS assembly instructions, fostering a deeper understanding of assembly language programming and the MIPS architecture.
