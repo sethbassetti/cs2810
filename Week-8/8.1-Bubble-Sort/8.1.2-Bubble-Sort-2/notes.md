@@ -2,6 +2,7 @@
 Take the last program and modify it to perform bubble sort:
 
 #### 1. Array Element Manipulation
+- Make sure you don't go out of bounds by subtracting 1 from the register that stores the array size
 - Delete the code that prints out numbers and spaces
 - Inside the loop, load the current array element and the next array element into two separate registers (e.g., `$t3` and `$t4`).
   - Use the `lw` instruction with the base address to load array[i], and the base address with an offset of 4 to load array[i+1]
