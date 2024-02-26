@@ -10,7 +10,9 @@ main:
 	# Setup
 	la $t0, array		# Load array address into t0
 	lw $t1, size		# Load array size into t1
+	addi $t1, $t1, -1	# size -= 1, so that we only go to the second-to-last element
 	li $t2, 0			# i = 0
+	
 	
 	loop:
 		beq $t1, $t2, loop_end 	# if i == size of array, then exit loop

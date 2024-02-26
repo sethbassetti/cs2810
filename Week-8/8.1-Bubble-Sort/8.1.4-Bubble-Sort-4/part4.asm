@@ -17,6 +17,8 @@ main:
 		
 		li $t2, 0			# j = 0
 		la $t0, array		# Load array address into t0
+		
+		li $t7, 0		# Register that stores whether a swap has taken place (1 is false)
 			
 		# Inner j loop
 		loop:
@@ -30,6 +32,7 @@ main:
 			beq $t5, $zero, skipSwap
 				sw $t3, 4($t0)		# Array[j] = array[j + 1]
 				sw $t4, ($t0)		# Array[j + 1] = array[j]
+				li $t7, 1			# If a swap has taken place, record it here
 			skipSwap:
 		
 		
@@ -42,6 +45,9 @@ main:
 		loop_end:
 		
 		addi $t6, $t6, 1	# i += 1
+		
+		# Before we jump back, if no swap has taken place, then just end the loop
+		beq $t7, $zero, outer_loop_end
 		
 		j outer_loop
 		
