@@ -65,7 +65,7 @@
 	move $a0, $t7
 	li $v0, 1
 	syscall
-	
+
 	exit:
 	li $v0, 10
 	syscall
